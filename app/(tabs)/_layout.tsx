@@ -42,6 +42,25 @@ export default function TabLayout() {
           ),
         }}
       />
+      <Tabs.Screen
+        name="universidad"
+        options={{
+          title: '', 
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon name={focused ? 'school' : 'school-outline'} color={color} />
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="clima"
+        options={{
+          title: '', 
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon name={focused ? 'cloudy-night' : 'cloudy-night-outline'} color={color} />
+          ),
+        }}
+      />
     </Tabs>
-  );
+  ); 
 }

@@ -9,7 +9,7 @@ export default function HomeScreen() {
     <Image source={require('../../assets/images/herramientas.png')} style={styles.image} />
    </View>
   );
-}
+} 
  
 const styles = StyleSheet.create({
   container: {

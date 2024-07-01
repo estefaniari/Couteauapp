@@ -7,7 +7,7 @@ import { useColorScheme } from '@/hooks/useColorScheme';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
-
+ 
   return (
     <Tabs
       screenOptions={{
@@ -58,6 +58,26 @@ export default function TabLayout() {
           title: '', 
           tabBarIcon: ({ color, focused }) => (
             <TabBarIcon name={focused ? 'cloudy-night' : 'cloudy-night-outline'} color={color} />
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="noticias"
+        options={{
+          title: '', 
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon name={focused ? 'document-text' : 'document-text-outline'} color={color} />
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="Acercade"
+        options={{
+          title: '',
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon name={focused ? 'call' : 'call-outline'} color={color} />
           ),
         }}
       />

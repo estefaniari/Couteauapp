@@ -2,9 +2,15 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, FlatList, StyleSheet, Linking } from 'react-native';
 import axios from 'axios';
 
-export default function UniversityScreen() {
-  const [country, setCountry] = useState('');
-  const [universities, setUniversities] = useState([]);
+interface University {
+  name: string; 
+  domains: string[];
+  web_pages: string[];
+}
+
+export default function universidad() {
+  const [country, setCountry] = useState<string>('');
+  const [universities, setUniversities] = useState<University[]>([]);
 
   const fetchUniversities = async () => {
     try {
@@ -13,7 +19,7 @@ export default function UniversityScreen() {
     } catch (error) {
       console.error(error);
     }
-  }; 
+  };
 
   return (
     <View style={styles.container}>
@@ -37,17 +43,18 @@ export default function UniversityScreen() {
             <Text style={styles.website} onPress={() => Linking.openURL(item.web_pages[0])}>
               {item.web_pages[0]}
             </Text>
-          </View> 
+          </View>
         )}
       />
     </View>
-  ); 
+  );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
+    paddingTop: 50, 
     backgroundColor: 'white',
     justifyContent: 'center',
     alignItems: 'center',
@@ -64,17 +71,17 @@ const styles = StyleSheet.create({
     marginBottom: 16,
     borderRadius: 5,
     backgroundColor: '#F0F0F0',
-    width: '80%', 
+    width: '80%',
   },
   button: {
-    backgroundColor: 'green', 
+    backgroundColor: 'green',
     paddingVertical: 10,
-    paddingHorizontal: 20, 
-    borderRadius: 20, 
+    paddingHorizontal: 20,
+    borderRadius: 20,
     marginTop: 16,
   },
-  buttonText: { 
-    color: '#FFFFFF', 
+  buttonText: {
+    color: '#FFFFFF',
     fontSize: 18,
     fontWeight: 'bold',
     textAlign: 'center',
@@ -92,7 +99,7 @@ const styles = StyleSheet.create({
   image: {
     width: 100,
     height: 100,
-    marginTop: 16, 
+    marginTop: 16,
   },
   university: {
     padding: 16,
@@ -103,7 +110,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
   },
-  domain: { 
+  domain: {
     fontSize: 16,
     color: '#666',
   },
@@ -111,5 +118,4 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: 'green',
   },
-});
- 
+}); 
